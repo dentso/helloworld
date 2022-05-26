@@ -1,0 +1,23 @@
+connector:
+  name: github
+  identifier: github
+  description:
+  orgIdentifier: default
+  projectIdentifier: test
+  type: Github
+  spec:
+    url: https://github.com/dentso/helloworld
+    validationRepo: helloworld
+    authentication:
+      type: Http
+      spec:
+        type: UsernameToken
+        spec:
+          username: dentso
+          tokenRef: github
+    apiAccess:
+      type: Token
+      spec:
+        tokenRef: github
+    executeOnDelegate: true
+    type: Repo
